@@ -336,13 +336,14 @@ html {
 /* Quote image - clean, no text */
 .quote-image {
     width: 100%;
-    max-width: 280px;
+    max-width: 150px;
     height: auto;
     border-radius: 4px;
     box-shadow: 0 3px 12px rgba(0,0,0,0.1);
     margin: 20px 0;
     display: block;
 }
+
 
 /* Alternative: Section divider */
 .section-divider {
