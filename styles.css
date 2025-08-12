@@ -1,4 +1,3 @@
-/* Apple-inspired CSS Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,304 +5,278 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-family: Arial, Helvetica, "Segoe UI", sans-serif;
     line-height: 1.6;
-    color: #1d1d1f;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    min-height: 100vh;
-    padding: 40px 20px;
-    font-weight: 400;
+    color: #333;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    font-size: 16px;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 24px;
-    padding: 60px 50px;
-    box-shadow: 
-        0 20px 40px rgba(0,0,0,0.1),
-        0 4px 12px rgba(0,0,0,0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.3);
+    background: #ffffff;
 }
 
-/* Header - Apple's minimal approach */
-header {
-    text-align: center;
-    margin-bottom: 60px;
-    padding-bottom: 40px;
-    position: relative;
+/* Header Section - Side by Side Layout */
+.main-header {
+    margin-bottom: 40px;
+    padding: 30px 0;
+    border-bottom: 1px solid #ddd;
 }
 
-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+.profile-section {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+/* Left Side - Profile Photos (RECTANGULAR) */
+.profile-image {
+    flex: 0 0 280px;
+    text-align: left;
+}
+
+.profile-photo {
+    width: 280px;
+    height: 350px;
+    border-radius: 4px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.additional-photos {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.additional-photo {
     width: 60px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #86868b, transparent);
+    height: 60px;
+    border-radius: 2px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-h1 {
-    font-size: 3.5rem;
-    color: #1d1d1f;
-    margin-bottom: 16px;
-    font-weight: 700;
-    letter-spacing: -2px;
-    background: linear-gradient(135deg, #1d1d1f 0%, #86868b 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.additional-photo:hover {
+    transform: scale(1.02);
+}
+
+/* Right Side - Content */
+.profile-content {
+    flex: 1;
+    padding-top: 20px;
+}
+
+.profile-content h1 {
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .title {
-    font-size: 1.4rem;
-    color: #86868b;
-    font-weight: 500;
+    font-size: 1.3rem;
+    color: #666;
+    font-weight: normal;
     margin-bottom: 8px;
-    letter-spacing: 0.5px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .affiliation {
     font-size: 1.1rem;
-    color: #86868b;
-    font-weight: 400;
+    color: #666;
+    font-weight: normal;
+    margin-bottom: 35px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Apple-style Navigation */
-nav {
+/* Inline Navigation - Simple like Dr. Sandeep's */
+.inline-nav {
     display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 60px;
-    padding: 8px;
-    background: rgba(255,255,255,0.6);
-    border-radius: 16px;
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.4);
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-nav a {
-    text-decoration: none;
-    color: #1d1d1f;
-    padding: 12px 24px;
-    border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    font-weight: 500;
+.inline-nav a {
+    text-decoration: underline;
+    color: #0066cc;
+    font-weight: normal;
     font-size: 1rem;
-    position: relative;
-    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 0.2s ease;
 }
 
-nav a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: left 0.5s;
+.inline-nav a:hover {
+    color: #004499;
 }
 
-nav a:hover::before {
-    left: 100%;
+/* Content Area */
+.content-area {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-nav a:hover {
-    background: #007aff;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,122,255,0.3);
-}
-
-/* Sections - Clean and spacious */
 section {
-    margin-bottom: 60px;
-    animation: fadeInUp 0.6s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    margin-bottom: 40px;
+    padding: 20px 0;
 }
 
 h2 {
-    color: #1d1d1f;
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-    font-weight: 600;
-    letter-spacing: -1px;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 3px;
-    background: linear-gradient(90deg, #007aff, #5ac8fa);
-    border-radius: 2px;
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
 }
 
 h3 {
-    color: #1d1d1f;
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-    font-weight: 600;
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 p {
-    color: #1d1d1f;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-/* Research Grid - Apple card layout */
-.research-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    margin-top: 30px;
-}
-
-.research-item {
-    background: rgba(255,255,255,0.8);
-    padding: 32px 24px;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.3);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.research-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #007aff, #5ac8fa, #34c759);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.research-item:hover::before {
-    opacity: 1;
-}
-
-.research-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    background: rgba(255,255,255,0.95);
-}
-
-.research-item h3 {
-    color: #1d1d1f;
-    margin-bottom: 12px;
-    font-size: 1.2rem;
-}
-
-.research-item p {
-    color: #86868b;
+    color: #333;
     font-size: 1rem;
-    margin: 0;
-    line-height: 1.5;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Education Card */
-.education-card {
-    background: rgba(255,255,255,0.8);
-    padding: 40px 32px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.3);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
 }
 
-.education-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0,122,255,0.1) 0%, transparent 70%);
-    animation: rotate 20s linear infinite;
+li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+/* Education Items */
+.education-item {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border-left: 3px solid #0066cc;
 }
 
-.education-card > * {
-    position: relative;
-    z-index: 1;
+.education-item h3 {
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 .institution {
-    color: #007aff;
-    font-weight: 500;
-    font-size: 1.1rem;
+    color: #0066cc;
+    font-weight: normal;
+    margin-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .status {
-    color: #86868b;
+    color: #333;
     font-style: italic;
+    font-weight: normal;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Contact Grid */
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 24px;
-    margin-top: 30px;
+/* Academic Engagements */
+.academic-engagements {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 4px;
+    margin-top: 25px;
 }
 
-.contact-item {
-    background: rgba(255,255,255,0.8);
-    padding: 24px 20px;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.3);
+.academic-engagements h3 {
     text-align: center;
-    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-.contact-item:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+.engagement-list {
+    list-style: disc;
+    margin-left: 20px;
 }
 
-.contact-item h3 {
-    color: #007aff;
-    font-size: 1rem;
-    font-weight: 600;
+.engagement-list li {
+    background: none;
+    padding: 0;
     margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    border: none;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.contact-item p {
-    margin: 0;
-    color: #1d1d1f;
-    font-size: 1rem;
+/* Blog Posts */
+.blog-post {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border-left: 3px solid #0066cc;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Interest Sections */
+.interest-section {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border-left: 3px solid #0066cc;
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    background: #fff3cd;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border-left: 3px solid #ffc107;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    color: #666;
+    font-size: 0.9rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Smooth scrolling */
@@ -313,60 +286,50 @@ html {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    body {
-        padding: 20px 10px;
+    .profile-section {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
     }
     
-    .container {
-        padding: 40px 25px;
-        border-radius: 20px;
+    .profile-image {
+        flex: none;
+        text-align: center;
     }
     
-    h1 {
-        font-size: 2.5rem;
-        letter-spacing: -1px;
+    .profile-photo {
+        width: 220px;
+        height: 280px;
     }
     
-    nav {
-        flex-wrap: wrap;
-        gap: 6px;
+    .profile-content h1 {
+        font-size: 2.2rem;
     }
     
-    nav a {
-        padding: 10px 16px;
-        font-size: 0.9rem;
+    .inline-nav {
+        justify-content: center;
     }
     
-    .research-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-    
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-    
-    h2 {
-        font-size: 1.8rem;
-    }
-    
-    section {
-        margin-bottom: 40px;
+    .content-area {
+        padding: 0 15px;
     }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 2rem;
+    .profile-photo {
+        width: 180px;
+        height: 230px;
     }
     
-    .title {
-        font-size: 1.2rem;
+    .profile-content h1 {
+        font-size: 1.8rem;
     }
     
-    nav a {
-        padding: 8px 12px;
-        font-size: 0.85rem;
+    .inline-nav a {
+        font-size: 0.9rem;
+    }
+    
+    body {
+        padding: 15px;
     }
 }
