@@ -333,3 +333,34 @@ html {
         padding: 15px;
     }
 }
+/* Quote image - clean, no text */
+.quote-image {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    display: block;
+}
+
+/* Alternative: Section divider */
+.section-divider {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.divider-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .quote-image, .divider-image {
+        max-width: 100%;
+    }
+}
