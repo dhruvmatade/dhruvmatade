@@ -336,7 +336,7 @@ html {
 /* Quote image - clean, no text */
 .quote-image {
     width: 100%;
-    max-width: 150px;
+    max-width: 100px;  /* Much smaller now */
     height: auto;
     border-radius: 4px;
     box-shadow: 0 3px 12px rgba(0,0,0,0.1);
